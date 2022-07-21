@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Jun 02 13:50:24 2022
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : shift_reg_l4
+Top-level Entity Name : shift_reg_l4
+Family : Cyclone II
+Total logic elements : 12
+    Total combinational functions : 2
+    Dedicated logic registers : 11
+Total registers : 11
+Total pins : 41
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

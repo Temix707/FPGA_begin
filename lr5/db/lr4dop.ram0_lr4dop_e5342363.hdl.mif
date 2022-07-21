@@ -1,0 +1,20 @@
+-- begin_signature
+-- lr4dop
+-- end_signature
+WIDTH=7;
+DEPTH=9;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	8 :	1010010;
+	7 :	0110110;
+	6 :	1100101;
+	5 :	1111110;
+	4 :	1111111;
+	3 :	1000000;
+	2 :	0110100;
+	1 :	1100111;
+	0 :	1111100;
+END;

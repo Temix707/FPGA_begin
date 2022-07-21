@@ -1,0 +1,67 @@
+module lr6(input x,rst,clk,output y);
+parameter [3:0] reset=0,state1=1,state11=2,state110=3,state1100=4,state11001=5,state110011=6,state1100111=7,state11001110=8;
+reg[3:0] currentState;
+initial 
+currentState = reset;
+always@(poosedge clk)
+begin
+if(rst)
+currentState=reset;
+else case(currentState)
+reset:
+begin
+if(x==1'b1) currentState=state1;
+else currentState=reset;
+end
+
+state1:
+begin
+if(x==1'b0) currentState=reset;
+else currentState=state11;
+end
+
+state11:
+begin
+if(x==1'b0) currentState=state110;
+else currentState=state1;
+end
+
+state110:
+begin
+if(x==1'b0) currentState=state1100;
+else currentState=state1;
+end
+
+state1100:
+begin
+if(x==1'b0) currentState=reset;
+else currentState=state11001;
+end
+
+state11001:
+begin
+if(x==1'b0) currentState=reset;
+else currentState=state110011;
+end
+
+state110011:
+begin
+if(x==1'b0) currentState=reset;
+else currentState=state1100111;
+end
+
+state1100111:
+begin
+if(x==1'b1) currentState=state1;
+else currentState=state11001110;
+end
+state11001110:
+begin
+if(x==1'b1) currentState=state1;
+else currentState=reset;
+end
+default:currentState=reset
+endcase
+end
+assign y=(currentState==state11001110);
+endmodule

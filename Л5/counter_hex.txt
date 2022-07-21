@@ -1,0 +1,125 @@
+module tablo (
+ input            clk,
+ input      [30:0] pulse_counter,
+ input      [30:0] l,
+ output reg [6:0]  hex0,
+ output reg [6:0]  hex1,
+ output reg [6:0]  hex2,
+ output reg [6:0]  hex3,
+ output reg [9:0]  ledr
+             );
+
+reg [16:0] v;
+reg [16:0] edin;
+reg [16:0] des;
+reg [16:0] sotni;
+reg [16:0] t;
+
+initial edin = 0;
+initial des  = 0;
+initial sotni  = 0;
+initial t  = 0;
+initial v  = 0;
+ 
+always @ (posedge clk)
+begin
+if ((pulse_counter==0)&(l==0)) begin
+edin = edin + 1;
+
+if (edin== 10)
+begin
+des=des+1;
+edin=0;
+end
+else edin=edin;
+
+if (des==10)
+begin
+des=0;
+sotni=sotni+1;
+end 
+else des=des;
+if (sotni==10)
+begin
+ledr [9:0] = 10'b1111111111;
+sotni=0;
+t=t+1;
+end 
+else
+begin
+ledr [9:0] = 10'b00000000000;
+sotni=sotni;
+end
+if (t==6) 
+begin
+t=0;
+v=v+1;
+if (v==11) v=0;
+else v=v;
+end
+end
+else 
+if ((pulse_counter==0) & (l==1))
+begin
+edin = 0;
+des = 0;
+sotni=0;
+t=0;
+v=0;
+end
+end
+
+always @*
+begin
+case(edin)
+0:hex0<=7'b1000000;
+1:hex0<=7'b1001111;
+2:hex0<=7'b0100100;
+3:hex0<=7'b0110000;
+4:hex0<=7'b0011001;
+5:hex0<=7'b0010010;
+6:hex0<=7'b0000010;
+7:hex0<=7'b1111000;
+8:hex0<=7'b0000000;
+9:hex0<=7'b0010000;
+10:hex0<=7'b1000000;
+endcase
+case(des)
+0:hex1<=7'b1000000;
+1:hex1<=7'b1001111;
+2:hex1<=7'b0100100;
+3:hex1<=7'b0110000;
+4:hex1<=7'b0011001;
+5:hex1<=7'b0010010;
+6:hex1<=7'b0000010;
+7:hex1<=7'b1111000;
+8:hex1<=7'b0000000;
+9:hex1<=7'b0010000;
+10:hex1<=7'b1000000;
+endcase 
+case(sotni)
+0:hex2<=7'b1000000;
+1:hex2<=7'b1001111;
+2:hex2<=7'b0100100;
+3:hex2<=7'b0110000;
+4:hex2<=7'b0011001;
+5:hex2<=7'b0010010;
+6:hex2<=7'b0000010;
+7:hex2<=7'b1111000;
+8:hex2<=7'b0000000;
+9:hex2<=7'b0010000;
+10:hex2<=7'b1000000;
+endcase 
+case(t)
+0:hex3<=7'b1000000;
+1:hex3<=7'b1001111;
+2:hex3<=7'b0100100;
+3:hex3<=7'b0110000;
+4:hex3<=7'b0011001;
+5:hex3<=7'b0010010;
+6:hex3<=7'b1000000;
+endcase 
+
+
+end
+endmodule 

@@ -1,0 +1,267 @@
+module lab5(
+input [3:0]KEY,
+input [2:0]SW,
+input CLOCK_50,
+output reg [6:0]HEX0,
+output reg [6:0]HEX1,
+output reg [6:0]HEX2,
+output reg [6:0]HEX3,
+output [7:0]LEDR,
+output [7:0]LEDG
+);
+reg [15:0]PAMJAT[0:4];
+reg [15:0]ZNACH;
+reg [15:0]BBB;
+reg [18:0]COUNTER;
+reg [3:0]SOTAJA;
+reg [3:0]DESATAJA;
+reg [3:0]SEKUNDA;
+reg [3:0]DESAT;
+reg [2:0]STARTSTOP;
+reg [2:0]SBR;
+reg [2:0]SOXR;
+reg [3:0]KOLVOSOXR;
+reg [2:0]OBRZAGR;
+reg SBROS;
+reg EN;
+reg SAVE;
+reg count1;
+reg count2;
+reg count3;
+reg count4;
+reg LOAD;
+initial begin
+COUNTER[18:0]=18'b0;
+SOTAJA[3:0]=4'b0;
+DESATAJA[3:0]=4'b0;
+SEKUNDA[3:0]=4'b0;
+DESAT[3:0]=4'b0;
+HEX0=7'b1000000;
+HEX1=7'b1000000;
+HEX2=7'b1000000;
+HEX3=7'b1000000;
+EN=0;
+SAVE=1;
+SBR[2:0]=3'b0;
+STARTSTOP[2:0]=3'b0;
+SOXR[2:0]=3'b0;
+KOLVOSOXR[3:0]=2'd0;
+SBROS=0;
+ZNACH[15:0]=16'b0;
+LOAD=0;
+OBRZAGR=3'b0;
+end
+always@(posedge CLOCK_50)
+begin//обработка пуска и остановки
+STARTSTOP[2:0]={STARTSTOP[1:0],KEY[0]};
+if (~STARTSTOP[2]&STARTSTOP[1])
+EN=~EN;
+end
+always@(posedge CLOCK_50)
+begin//обработка кнопки сброс
+SBR[2:0]={SBR[1:0],KEY[1]};
+if(~SBR[2]&SBR[1])
+SBROS=1;
+else
+SBROS=0;
+end
+always@(posedge CLOCK_50)
+begin//обработка кнопки сохранить
+SOXR[2:0]={SOXR[1:0],KEY[2]};
+if (~SOXR[2]&SOXR[1]) 
+SAVE=1;
+else SAVE=0;
+end
+always@(posedge CLOCK_50)
+begin//обработка кноки загрузить
+OBRZAGR[2:0]={OBRZAGR[1:0],KEY[3]};
+if(~OBRZAGR[2]&OBRZAGR[1])
+LOAD=1;
+else
+LOAD=0;
+end
+always@(posedge CLOCK_50) 
+begin//отсчёт тактов до одной сотой секунды
+if(EN)
+begin
+COUNTER=COUNTER+1;
+if(COUNTER==19'b0000000000000010100)
+begin
+COUNTER=19'b0;
+count1=1;
+end else
+count1=0;
+end
+if(SBROS)
+COUNTER=19'b0;
+end
+always@(posedge CLOCK_50)
+begin//работа секундомера
+if(EN)//отсчёт
+begin
+if(SAVE)//сохранение
+begin
+BBB[15:0]={DESAT[3:0],SEKUNDA[3:0],DESATAJA[3:0],SOTAJA[3:0]};
+case(KOLVOSOXR[3:0])
+4'b0000: begin
+PAMJAT[1]=BBB;
+KOLVOSOXR=KOLVOSOXR+1;
+end
+4'b0001:begin
+PAMJAT[2]=BBB;
+KOLVOSOXR=KOLVOSOXR+1;
+end
+4'b0010:begin
+PAMJAT[3]=BBB;
+KOLVOSOXR=KOLVOSOXR+1;
+end
+4'b0011:begin
+PAMJAT[4]=BBB;
+KOLVOSOXR=KOLVOSOXR+1;
+end
+endcase
+end
+if(SBROS)//сброс
+SOTAJA=4'b0;
+if(count1)
+SOTAJA=SOTAJA+1;
+if(SOTAJA==4'b1010)
+begin
+SOTAJA=4'b0000;
+count2=1;
+end else
+count2=0;
+if(SBROS)
+DESATAJA=4'b0000;
+if(count2)
+DESATAJA=DESATAJA+1;
+if(DESATAJA==4'b1010)
+begin
+DESATAJA=4'b0000;
+count3=1;
+end else
+count3=0;
+if(SBROS)
+SEKUNDA=4'b0000;
+if(count3)
+SEKUNDA=SEKUNDA+1;
+if(SEKUNDA==4'b1010)
+begin
+SEKUNDA=4'b0000;
+count4=1;
+end else
+count4=0;
+if(SBROS)
+DESAT=4'b0000;
+if(count4)
+DESAT=DESAT+1;
+if(SEKUNDA==4'b1010)
+SEKUNDA=4'b0000;
+end
+if(LOAD)//вывод из пямяти
+begin
+case(SW[1:0])
+2'b00:
+begin
+ZNACH=PAMJAT[1];
+DESAT=ZNACH[15:12];
+SEKUNDA=ZNACH[11:8];
+DESATAJA=ZNACH[7:4];
+SOTAJA=ZNACH[3:0];
+end
+2'b01:
+begin
+ZNACH=PAMJAT[2];
+DESAT=ZNACH[15:12];
+SEKUNDA=ZNACH[11:8];
+DESATAJA=ZNACH[7:4];
+SOTAJA=ZNACH[3:0];
+end
+2'b10:
+begin
+ZNACH=PAMJAT[3];
+DESAT=ZNACH[15:12];
+SEKUNDA=ZNACH[11:8];
+DESATAJA=ZNACH[7:4];
+SOTAJA=ZNACH[3:0];
+end
+2'b11:
+begin
+ZNACH=PAMJAT[4];
+DESAT=ZNACH[15:12];
+SEKUNDA=ZNACH[11:8];
+DESATAJA=ZNACH[7:4];
+SOTAJA=ZNACH[3:0];
+end
+endcase
+end
+end
+always@(posedge CLOCK_50)
+begin//дешифраторы для вывода на 4 семисегментных индикатора
+//if(EN | LOAD)
+//begin
+case(SOTAJA[3:0])
+4'b0000:HEX0=7'b1000000;
+4'b0001:HEX0=7'b1111001;
+4'b0010:HEX0=7'b0100100;
+4'b0011:HEX0=7'b0110000;
+4'b0100:HEX0=7'b0011001;
+4'b0101:HEX0=7'b0010010;
+4'b0110:HEX0=7'b0000010;
+4'b0111:HEX0=7'b1111000;
+4'b1000:HEX0=7'b0000000;
+4'b1001:HEX0=7'b0010000;
+endcase
+case(DESATAJA[3:0])
+4'b0000:HEX1=7'b1000000;
+4'b0001:HEX1=7'b1111001;
+4'b0010:HEX1=7'b0100100;
+4'b0011:HEX1=7'b0110000;
+4'b0100:HEX1=7'b0011001;
+4'b0101:HEX1=7'b0010010;
+4'b0110:HEX1=7'b0000010;
+4'b0111:HEX1=7'b1111000;
+4'b1000:HEX1=7'b0000000;
+4'b1001:HEX1=7'b0010000;
+endcase
+case(SEKUNDA[3:0])
+4'b0000:HEX2=7'b1000000;
+4'b0001:HEX2=7'b1111001;
+4'b0010:HEX2=7'b0100100;
+4'b0011:HEX2=7'b0110000;
+4'b0100:HEX2=7'b0011001;
+4'b0101:HEX2=7'b0010010;
+4'b0110:HEX2=7'b0000010;
+4'b0111:HEX2=7'b1111000;
+4'b1000:HEX2=7'b0000000;
+4'b1001:HEX2=7'b0010000;
+endcase
+case(DESAT[3:0])
+4'b0000:HEX3=7'b1000000;
+4'b0001:HEX3=7'b1111001;
+4'b0010:HEX3=7'b0100100;
+4'b0011:HEX3=7'b0110000;
+4'b0100:HEX3=7'b0011001;
+4'b0101:HEX3=7'b0010010;
+4'b0110:HEX3=7'b0000010;
+4'b0111:HEX3=7'b1111000;
+4'b1000:HEX3=7'b0000000;
+4'b1001:HEX3=7'b0010000;
+endcase
+//end
+end
+/*always@(posedge CLOCK_50)//сохранение
+begin
+if(SAVE)
+begin
+PAMJAT[KOLVOSOXR]={DESAT[3:0],SEKUNDA[3:0],DESATAJA[3:0],SOTAJA[3:0]};
+KOLVOSOXR=KOLVOSOXR+1;
+end
+end
+*/assign LEDR[0]=count1;
+assign LEDR[1]=count2;
+assign LEDR[2]=count3;
+assign LEDR[3]=count4;
+assign LEDG[3:0]=SOTAJA[3:0];
+assign LEDG[7:4]=DESATAJA[3:0];
+endmodule

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Apr 12 17:29:23 2022
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : lr4
+Top-level Entity Name : lr4
+Family : Cyclone II
+Total logic elements : 44
+    Total combinational functions : 40
+    Dedicated logic registers : 23
+Total registers : 23
+Total pins : 22
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

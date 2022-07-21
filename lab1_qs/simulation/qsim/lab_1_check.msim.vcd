@@ -1,0 +1,68 @@
+$comment
+	File created using the following command:
+		vcd file lab_1_check.msim.vcd -direction
+$end
+$date
+	Tue Mar 15 15:03:12 2022
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module check_me_1_vlg_vec_tst $end
+$var reg 1 ! sw_0 $end
+$var reg 1 " sw_1 $end
+$var reg 1 # sw_2 $end
+$var wire 1 $ ledr [9] $end
+$var wire 1 % ledr [8] $end
+$var wire 1 & ledr [7] $end
+$var wire 1 ' ledr [6] $end
+$var wire 1 ( ledr [5] $end
+$var wire 1 ) ledr [4] $end
+$var wire 1 * ledr [3] $end
+$var wire 1 + ledr [2] $end
+$var wire 1 , ledr [1] $end
+$var wire 1 - ledr [0] $end
+$scope module i1 $end
+$var wire 1 . gnd $end
+$var wire 1 / vcc $end
+$var wire 1 0 unknown $end
+$var tri1 1 1 devclrn $end
+$var tri1 1 2 devpor $end
+$var tri1 1 3 devoe $end
+$var wire 1 4 sw_0~combout $end
+$var wire 1 5 sw_1~combout $end
+$var wire 1 6 sw_2~combout $end
+$var wire 1 7 temp~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x!
+x"
+x#
+1-
+1,
+1+
+1*
+1)
+x(
+x'
+x&
+x%
+x$
+0.
+1/
+x0
+11
+12
+13
+x4
+x5
+x6
+x7
+$end
+#1000000

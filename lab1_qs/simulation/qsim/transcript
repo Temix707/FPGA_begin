@@ -1,0 +1,22 @@
+# do lab_1_check.do 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module check_me_1
+# 
+# Top level modules:
+# 	check_me_1
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module check_me_1_vlg_vec_tst
+# 
+# Top level modules:
+# 	check_me_1_vlg_vec_tst
+# vsim -L cycloneii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.check_me_1_vlg_vec_tst 
+# Loading work.check_me_1_vlg_vec_tst
+# Loading work.check_me_1
+# Loading cycloneii_ver.cycloneii_io
+# Loading cycloneii_ver.cycloneii_mux21
+# Loading cycloneii_ver.cycloneii_dffe
+# Loading cycloneii_ver.cycloneii_asynch_io
+# Loading cycloneii_ver.cycloneii_lcell_comb
+# Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
+# ** Note: $finish    : lab_1_check.vt(48)
+#    Time: 1 us  Iteration: 0  Instance: /check_me_1_vlg_vec_tst

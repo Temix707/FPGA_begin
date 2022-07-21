@@ -1,0 +1,36 @@
+|output_check_1
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+SW[4] => SW[4].IN1
+LEDR[0] <= check_me_1:inst1.port1
+LEDR[1] <= check_me_1:inst1.port1
+LEDR[2] <= check_me_1:inst1.port1
+LEDR[3] <= check_me_1:inst1.port1
+LEDR[4] <= check_me_1:inst1.port1
+LEDR[5] <= check_me_1:inst1.port1
+LEDR[6] <= check_me_1:inst1.port1
+LEDR[7] <= check_me_1:inst1.port1
+LEDR[8] <= check_me_1:inst1.port1
+LEDR[9] <= check_me_1:inst1.port1
+
+
+|output_check_1|check_me_1:inst1
+sw[0] => WideAnd0.IN0
+sw[1] => WideAnd0.IN1
+sw[2] => WideAnd0.IN2
+sw[3] => WideAnd0.IN3
+sw[4] => WideAnd0.IN4
+ledr[0] <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+ledr[1] <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+ledr[2] <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+ledr[3] <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+ledr[4] <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+ledr[5] <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+ledr[6] <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+ledr[7] <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+ledr[8] <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+ledr[9] <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,11 @@
+module lr4dop(
+input SW,
+output reg [6:0]HEX0,
+output reg [6:0]HEX1,
+output reg [6:0]HEX2,
+output reg [6:0]HEX3
+);
+reg [31:0] MEMORY[0:15];
+reg[31:0] COUNTER;
+initial $readmemb("mem.txt",MEMORY);
+  

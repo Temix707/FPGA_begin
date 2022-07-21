@@ -1,0 +1,12 @@
+module check_me_1(
+	input sw_0,
+	input sw_1,
+	
+	output [9:0]ledr
+);
+
+wire temp;
+assign temp = sw_0 & sw_1;
+
+assign ledr [4:0] = {5{temp}};
+assign ledr [9:5] = 5'b11111;

@@ -1,0 +1,12 @@
+
+State Machine - |lr6|currentState
+Name currentState.state1100111 currentState.state110011 currentState.state11001 currentState.state1100 currentState.state110 currentState.state11 currentState.state1 currentState.reset currentState.state11001110 
+currentState.reset 0 0 0 0 0 0 0 0 0 
+currentState.state1 0 0 0 0 0 0 1 1 0 
+currentState.state11 0 0 0 0 0 1 0 1 0 
+currentState.state110 0 0 0 0 1 0 0 1 0 
+currentState.state1100 0 0 0 1 0 0 0 1 0 
+currentState.state11001 0 0 1 0 0 0 0 1 0 
+currentState.state110011 0 1 0 0 0 0 0 1 0 
+currentState.state1100111 1 0 0 0 0 0 0 1 0 
+currentState.state11001110 0 0 0 0 0 0 0 1 1 

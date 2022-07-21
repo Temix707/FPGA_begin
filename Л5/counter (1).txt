@@ -1,0 +1,42 @@
+ module s4et4ik(
+input            clk,
+input            device_running,
+input            rst,
+output reg [30:0] pulse_counter,
+output reg [30:0] l
+              );
+
+
+//описание компаратора
+wire hundredth_of_second_passed = (pulse_counter == 30'd500000);//описание счётчика
+
+always @(posedge clk or posedge rst) begin
+if (rst) 
+begin
+pulse_counter <= 0; //асинхронный сброс
+l<=1;
+end
+
+else begin
+if (device_running) begin
+
+if (hundredth_of_second_passed) 
+begin
+pulse_counter <= 0; //синхронный сброс
+l<=0;
+end
+
+else 
+begin 
+pulse_counter <= pulse_counter + 1;
+l<=l+1;
+end
+
+end else
+begin
+ pulse_counter <= pulse_counter;
+ l<=l; 
+end
+end
+end
+endmodule 

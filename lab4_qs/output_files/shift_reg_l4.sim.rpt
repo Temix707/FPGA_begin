@@ -1,0 +1,252 @@
+Simulator report for shift_reg_l4
+Fri May 20 02:33:25 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 62 nodes     ;
+; Simulation Coverage         ;      12.90 % ;
+; Total Number of Transitions ; 71           ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                             ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                           ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                        ; Timing        ;
+; Start time                                                                                 ; 0 ns                                              ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                               ;               ;
+; Vector input source                                                                        ; C:/Progs/Quartus_project/lab4_qs/shift_reg_l4.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                ; On            ;
+; Check outputs                                                                              ; Off                                               ; Off           ;
+; Report simulation coverage                                                                 ; On                                                ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                               ; Off           ;
+; Detect glitches                                                                            ; Off                                               ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                               ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                               ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                               ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                               ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                        ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                               ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                               ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                              ; Auto          ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      12.90 % ;
+; Total nodes checked                                 ; 62           ;
+; Total output ports checked                          ; 62           ;
+; Total output ports with complete 1/0-value coverage ; 8            ;
+; Total output ports with no 1/0-value coverage       ; 27           ;
+; Total output ports with no 1-value coverage         ; 28           ;
+; Total output ports with no 0-value coverage         ; 53           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                  ;
++-----------------------------+-----------------------------+------------------+
+; Node Name                   ; Output Port Name            ; Output Port Type ;
++-----------------------------+-----------------------------+------------------+
+; |shift_reg_l4|always0~0     ; |shift_reg_l4|always0~0     ; out0             ;
+; |shift_reg_l4|LEDR_st_rg~13 ; |shift_reg_l4|LEDR_st_rg~13 ; out              ;
+; |shift_reg_l4|LEDR_st_rg~17 ; |shift_reg_l4|LEDR_st_rg~17 ; out              ;
+; |shift_reg_l4|LEDR_st_rg~23 ; |shift_reg_l4|LEDR_st_rg~23 ; out              ;
+; |shift_reg_l4|LEDR_st_rg~27 ; |shift_reg_l4|LEDR_st_rg~27 ; out              ;
+; |shift_reg_l4|KEY[0]        ; |shift_reg_l4|KEY[0]        ; out              ;
+; |shift_reg_l4|clk           ; |shift_reg_l4|clk           ; out              ;
+; |shift_reg_l4|SW0           ; |shift_reg_l4|SW0           ; out              ;
++-----------------------------+-----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                               ;
++----------------------------------+----------------------------------+------------------+
+; Node Name                        ; Output Port Name                 ; Output Port Type ;
++----------------------------------+----------------------------------+------------------+
+; |shift_reg_l4|always0~1          ; |shift_reg_l4|always0~1          ; out0             ;
+; |shift_reg_l4|LEDR_st_rg~0       ; |shift_reg_l4|LEDR_st_rg~0       ; out              ;
+; |shift_reg_l4|LEDR_st_rg~1       ; |shift_reg_l4|LEDR_st_rg~1       ; out              ;
+; |shift_reg_l4|LEDR_st_rg~2       ; |shift_reg_l4|LEDR_st_rg~2       ; out              ;
+; |shift_reg_l4|LEDR_st_rg~3       ; |shift_reg_l4|LEDR_st_rg~3       ; out              ;
+; |shift_reg_l4|OSL~0              ; |shift_reg_l4|OSL~0              ; out              ;
+; |shift_reg_l4|LEDR_st_rg~10      ; |shift_reg_l4|LEDR_st_rg~10      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~11      ; |shift_reg_l4|LEDR_st_rg~11      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~12      ; |shift_reg_l4|LEDR_st_rg~12      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~19      ; |shift_reg_l4|LEDR_st_rg~19      ; out              ;
+; |shift_reg_l4|OSL~1              ; |shift_reg_l4|OSL~1              ; out              ;
+; |shift_reg_l4|LEDR_st_rg~20      ; |shift_reg_l4|LEDR_st_rg~20      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~21      ; |shift_reg_l4|LEDR_st_rg~21      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~22      ; |shift_reg_l4|LEDR_st_rg~22      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~29      ; |shift_reg_l4|LEDR_st_rg~29      ; out              ;
+; |shift_reg_l4|OSL~2              ; |shift_reg_l4|OSL~2              ; out              ;
+; |shift_reg_l4|OSL~reg0           ; |shift_reg_l4|OSL~reg0           ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[6]~reg0 ; |shift_reg_l4|LEDR_st_rg[6]~reg0 ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[7]~reg0 ; |shift_reg_l4|LEDR_st_rg[7]~reg0 ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[8]~reg0 ; |shift_reg_l4|LEDR_st_rg[8]~reg0 ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[9]~reg0 ; |shift_reg_l4|LEDR_st_rg[9]~reg0 ; regout           ;
+; |shift_reg_l4|KEY[1]             ; |shift_reg_l4|KEY[1]             ; out              ;
+; |shift_reg_l4|ISL                ; |shift_reg_l4|ISL                ; out              ;
+; |shift_reg_l4|OSL                ; |shift_reg_l4|OSL                ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[6]      ; |shift_reg_l4|LEDR_st_rg[6]      ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[7]      ; |shift_reg_l4|LEDR_st_rg[7]      ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[8]      ; |shift_reg_l4|LEDR_st_rg[8]      ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[9]      ; |shift_reg_l4|LEDR_st_rg[9]      ; pin_out          ;
++----------------------------------+----------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                               ;
++----------------------------------+----------------------------------+------------------+
+; Node Name                        ; Output Port Name                 ; Output Port Type ;
++----------------------------------+----------------------------------+------------------+
+; |shift_reg_l4|always0~1          ; |shift_reg_l4|always0~1          ; out0             ;
+; |shift_reg_l4|LEDR_st_rg~0       ; |shift_reg_l4|LEDR_st_rg~0       ; out              ;
+; |shift_reg_l4|LEDR_st_rg~1       ; |shift_reg_l4|LEDR_st_rg~1       ; out              ;
+; |shift_reg_l4|LEDR_st_rg~2       ; |shift_reg_l4|LEDR_st_rg~2       ; out              ;
+; |shift_reg_l4|LEDR_st_rg~3       ; |shift_reg_l4|LEDR_st_rg~3       ; out              ;
+; |shift_reg_l4|LEDR_st_rg~4       ; |shift_reg_l4|LEDR_st_rg~4       ; out              ;
+; |shift_reg_l4|LEDR_st_rg~5       ; |shift_reg_l4|LEDR_st_rg~5       ; out              ;
+; |shift_reg_l4|LEDR_st_rg~6       ; |shift_reg_l4|LEDR_st_rg~6       ; out              ;
+; |shift_reg_l4|LEDR_st_rg~7       ; |shift_reg_l4|LEDR_st_rg~7       ; out              ;
+; |shift_reg_l4|LEDR_st_rg~8       ; |shift_reg_l4|LEDR_st_rg~8       ; out              ;
+; |shift_reg_l4|LEDR_st_rg~9       ; |shift_reg_l4|LEDR_st_rg~9       ; out              ;
+; |shift_reg_l4|OSL~0              ; |shift_reg_l4|OSL~0              ; out              ;
+; |shift_reg_l4|LEDR_st_rg~10      ; |shift_reg_l4|LEDR_st_rg~10      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~11      ; |shift_reg_l4|LEDR_st_rg~11      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~12      ; |shift_reg_l4|LEDR_st_rg~12      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~14      ; |shift_reg_l4|LEDR_st_rg~14      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~15      ; |shift_reg_l4|LEDR_st_rg~15      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~16      ; |shift_reg_l4|LEDR_st_rg~16      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~18      ; |shift_reg_l4|LEDR_st_rg~18      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~19      ; |shift_reg_l4|LEDR_st_rg~19      ; out              ;
+; |shift_reg_l4|OSL~1              ; |shift_reg_l4|OSL~1              ; out              ;
+; |shift_reg_l4|LEDR_st_rg~20      ; |shift_reg_l4|LEDR_st_rg~20      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~21      ; |shift_reg_l4|LEDR_st_rg~21      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~22      ; |shift_reg_l4|LEDR_st_rg~22      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~24      ; |shift_reg_l4|LEDR_st_rg~24      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~25      ; |shift_reg_l4|LEDR_st_rg~25      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~26      ; |shift_reg_l4|LEDR_st_rg~26      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~28      ; |shift_reg_l4|LEDR_st_rg~28      ; out              ;
+; |shift_reg_l4|LEDR_st_rg~29      ; |shift_reg_l4|LEDR_st_rg~29      ; out              ;
+; |shift_reg_l4|OSL~2              ; |shift_reg_l4|OSL~2              ; out              ;
+; |shift_reg_l4|OSL~reg0           ; |shift_reg_l4|OSL~reg0           ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[0]~reg0 ; |shift_reg_l4|LEDR_st_rg[0]~reg0 ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[1]~reg0 ; |shift_reg_l4|LEDR_st_rg[1]~reg0 ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[2]~reg0 ; |shift_reg_l4|LEDR_st_rg[2]~reg0 ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[3]~reg0 ; |shift_reg_l4|LEDR_st_rg[3]~reg0 ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[4]~reg0 ; |shift_reg_l4|LEDR_st_rg[4]~reg0 ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[5]~reg0 ; |shift_reg_l4|LEDR_st_rg[5]~reg0 ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[6]~reg0 ; |shift_reg_l4|LEDR_st_rg[6]~reg0 ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[7]~reg0 ; |shift_reg_l4|LEDR_st_rg[7]~reg0 ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[8]~reg0 ; |shift_reg_l4|LEDR_st_rg[8]~reg0 ; regout           ;
+; |shift_reg_l4|LEDR_st_rg[9]~reg0 ; |shift_reg_l4|LEDR_st_rg[9]~reg0 ; regout           ;
+; |shift_reg_l4|KEY[1]             ; |shift_reg_l4|KEY[1]             ; out              ;
+; |shift_reg_l4|OSL                ; |shift_reg_l4|OSL                ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[0]      ; |shift_reg_l4|LEDR_st_rg[0]      ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[1]      ; |shift_reg_l4|LEDR_st_rg[1]      ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[2]      ; |shift_reg_l4|LEDR_st_rg[2]      ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[3]      ; |shift_reg_l4|LEDR_st_rg[3]      ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[4]      ; |shift_reg_l4|LEDR_st_rg[4]      ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[5]      ; |shift_reg_l4|LEDR_st_rg[5]      ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[6]      ; |shift_reg_l4|LEDR_st_rg[6]      ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[7]      ; |shift_reg_l4|LEDR_st_rg[7]      ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[8]      ; |shift_reg_l4|LEDR_st_rg[8]      ; pin_out          ;
+; |shift_reg_l4|LEDR_st_rg[9]      ; |shift_reg_l4|LEDR_st_rg[9]      ; pin_out          ;
++----------------------------------+----------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri May 20 02:33:25 2022
+Info: Command: quartus_sim --simulation_results_format=VWF shift_reg_l4 -c shift_reg_l4
+Info (324025): Using vector source file "C:/Progs/Quartus_project/lab4_qs/shift_reg_l4.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning (324036): Found clock-sensitive change during active clock edge at time 60.0 ns on register "|shift_reg_l4|LEDR_st_rg[2]~reg0"
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      12.90 %
+Info (328052): Number of transitions in simulation is 71
+Info (324045): Vector file shift_reg_l4.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4441 megabytes
+    Info: Processing ended: Fri May 20 02:33:25 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

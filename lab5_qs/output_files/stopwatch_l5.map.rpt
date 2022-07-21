@@ -1,0 +1,442 @@
+Analysis & Synthesis report for stopwatch_l5
+Thu Jun 02 17:45:48 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jun 02 17:45:48 2022           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; stopwatch_l5                                    ;
+; Top-level Entity Name              ; stopwatch_l5                                    ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 130                                             ;
+;     Total combinational functions  ; 130                                             ;
+;     Dedicated logic registers      ; 37                                              ;
+; Total registers                    ; 37                                              ;
+; Total pins                         ; 49                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                      ; stopwatch_l5       ; stopwatch_l5       ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                    ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+; stopwatch_l5.v                   ; yes             ; User Verilog HDL File  ; C:/Progs/Quartus_project/lab5_qs/stopwatch_l5.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 130      ;
+;                                             ;          ;
+; Total combinational functions               ; 130      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 51       ;
+;     -- 3 input functions                    ; 60       ;
+;     -- <=2 input functions                  ; 19       ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 112      ;
+;     -- arithmetic mode                      ; 18       ;
+;                                             ;          ;
+; Total registers                             ; 37       ;
+;     -- Dedicated logic registers            ; 37       ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 49       ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 37       ;
+; Total fan-out                               ; 562      ;
+; Average fan-out                             ; 2.60     ;
++---------------------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |stopwatch_l5              ; 130 (130)         ; 37 (37)      ; 0           ; 0            ; 0       ; 0         ; 49   ; 0            ; |stopwatch_l5       ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; HEX0[0]$latch                                       ; Mux31               ; yes                    ;
+; HEX0[1]$latch                                       ; Mux31               ; yes                    ;
+; HEX0[2]$latch                                       ; Mux31               ; yes                    ;
+; HEX0[3]$latch                                       ; Mux31               ; yes                    ;
+; HEX0[4]$latch                                       ; Mux31               ; yes                    ;
+; HEX0[5]$latch                                       ; Mux31               ; yes                    ;
+; HEX0[6]$latch                                       ; Mux31               ; yes                    ;
+; HEX1[0]$latch                                       ; Mux23               ; yes                    ;
+; HEX1[1]$latch                                       ; Mux23               ; yes                    ;
+; HEX1[2]$latch                                       ; Mux23               ; yes                    ;
+; HEX1[3]$latch                                       ; Mux23               ; yes                    ;
+; HEX1[4]$latch                                       ; Mux23               ; yes                    ;
+; HEX1[5]$latch                                       ; Mux23               ; yes                    ;
+; HEX1[6]$latch                                       ; Mux23               ; yes                    ;
+; HEX2[0]$latch                                       ; Mux15               ; yes                    ;
+; HEX2[1]$latch                                       ; Mux15               ; yes                    ;
+; HEX2[2]$latch                                       ; Mux15               ; yes                    ;
+; HEX2[3]$latch                                       ; Mux15               ; yes                    ;
+; HEX2[4]$latch                                       ; Mux15               ; yes                    ;
+; HEX2[5]$latch                                       ; Mux15               ; yes                    ;
+; HEX2[6]$latch                                       ; Mux15               ; yes                    ;
+; HEX3[0]$latch                                       ; Mux7                ; yes                    ;
+; HEX3[1]$latch                                       ; Mux7                ; yes                    ;
+; HEX3[2]$latch                                       ; Mux7                ; yes                    ;
+; HEX3[3]$latch                                       ; Mux7                ; yes                    ;
+; HEX3[4]$latch                                       ; Mux7                ; yes                    ;
+; HEX3[5]$latch                                       ; Mux7                ; yes                    ;
+; HEX3[6]$latch                                       ; Mux7                ; yes                    ;
+; Number of user-specified and inferred latches = 28  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------+
+; Registers Removed During Synthesis                                ;
++----------------------------------------+--------------------------+
+; Register name                          ; Reason for Removal       ;
++----------------------------------------+--------------------------+
+; LEDR[7]~reg0                           ; Merged with LEDR[9]~reg0 ;
+; LEDR[3]~reg0                           ; Merged with LEDR[9]~reg0 ;
+; LEDR[5]~reg0                           ; Merged with LEDR[9]~reg0 ;
+; LEDR[1]~reg0                           ; Merged with LEDR[9]~reg0 ;
+; LEDR[0]~reg0                           ; Merged with LEDR[9]~reg0 ;
+; LEDR[8]~reg0                           ; Merged with LEDR[9]~reg0 ;
+; LEDR[6]~reg0                           ; Merged with LEDR[9]~reg0 ;
+; LEDR[4]~reg0                           ; Merged with LEDR[9]~reg0 ;
+; LEDR[2]~reg0                           ; Merged with LEDR[9]~reg0 ;
+; LEDG[0]~reg0                           ; Merged with LEDG[7]~reg0 ;
+; LEDG[2]~reg0                           ; Merged with LEDG[7]~reg0 ;
+; LEDG[6]~reg0                           ; Merged with LEDG[7]~reg0 ;
+; LEDG[1]~reg0                           ; Merged with LEDG[7]~reg0 ;
+; LEDG[5]~reg0                           ; Merged with LEDG[7]~reg0 ;
+; LEDG[4]~reg0                           ; Merged with LEDG[7]~reg0 ;
+; LEDG[3]~reg0                           ; Merged with LEDG[7]~reg0 ;
+; Total Number of Removed Registers = 16 ;                          ;
++----------------------------------------+--------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 37    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 21    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |stopwatch_l5|one_fourth_sec[0] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |stopwatch_l5|one_third_sec[0]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |stopwatch_l5|one_first_sec[0]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |stopwatch_l5|one_second_sec[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Jun 02 17:45:45 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stopwatch_l5 -c stopwatch_l5
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (10229): Verilog HDL Expression warning at stopwatch_l5.v(48): truncated literal to match 19 bits
+Info (12021): Found 1 design units, including 1 entities, in source file stopwatch_l5.v
+    Info (12023): Found entity 1: stopwatch_l5
+Info (12127): Elaborating entity "stopwatch_l5" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at stopwatch_l5.v(38): truncated value with size 32 to match size of target (19)
+Warning (10230): Verilog HDL assignment warning at stopwatch_l5.v(49): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at stopwatch_l5.v(53): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at stopwatch_l5.v(58): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at stopwatch_l5.v(67): truncated value with size 10 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at stopwatch_l5.v(76): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at stopwatch_l5.v(77): truncated value with size 10 to match size of target (8)
+Warning (10270): Verilog HDL Case Statement warning at stopwatch_l5.v(88): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at stopwatch_l5.v(102): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at stopwatch_l5.v(115): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at stopwatch_l5.v(128): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at stopwatch_l5.v(31): inferring latch(es) for variable "HEX0", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at stopwatch_l5.v(31): inferring latch(es) for variable "HEX1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at stopwatch_l5.v(31): inferring latch(es) for variable "HEX2", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at stopwatch_l5.v(31): inferring latch(es) for variable "HEX3", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "HEX3[0]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX3[1]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX3[2]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX3[3]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX3[4]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX3[5]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX3[6]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX2[0]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX2[1]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX2[2]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX2[3]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX2[4]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX2[5]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX2[6]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX1[0]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX1[1]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX1[2]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX1[3]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX1[4]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX1[5]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX1[6]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX0[0]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX0[1]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX0[2]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX0[3]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX0[4]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX0[5]" at stopwatch_l5.v(31)
+Info (10041): Inferred latch for "HEX0[6]" at stopwatch_l5.v(31)
+Warning (13012): Latch HEX0[0]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_first_sec[1]
+Warning (13012): Latch HEX0[1]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_first_sec[2]
+Warning (13012): Latch HEX0[2]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_first_sec[2]
+Warning (13012): Latch HEX0[3]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_first_sec[1]
+Warning (13012): Latch HEX0[4]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_first_sec[2]
+Warning (13012): Latch HEX0[5]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_first_sec[1]
+Warning (13012): Latch HEX0[6]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_first_sec[1]
+Warning (13012): Latch HEX1[0]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_second_sec[1]
+Warning (13012): Latch HEX1[1]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_second_sec[2]
+Warning (13012): Latch HEX1[2]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_second_sec[2]
+Warning (13012): Latch HEX1[3]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_second_sec[1]
+Warning (13012): Latch HEX1[4]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_second_sec[2]
+Warning (13012): Latch HEX1[5]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_second_sec[1]
+Warning (13012): Latch HEX1[6]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_second_sec[1]
+Warning (13012): Latch HEX2[0]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_third_sec[1]
+Warning (13012): Latch HEX2[1]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_third_sec[2]
+Warning (13012): Latch HEX2[2]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_third_sec[2]
+Warning (13012): Latch HEX2[3]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_third_sec[1]
+Warning (13012): Latch HEX2[4]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_third_sec[2]
+Warning (13012): Latch HEX2[5]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_third_sec[1]
+Warning (13012): Latch HEX2[6]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_third_sec[1]
+Warning (13012): Latch HEX3[0]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_fourth_sec[1]
+Warning (13012): Latch HEX3[1]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_fourth_sec[2]
+Warning (13012): Latch HEX3[2]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_fourth_sec[2]
+Warning (13012): Latch HEX3[3]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_fourth_sec[1]
+Warning (13012): Latch HEX3[4]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_fourth_sec[2]
+Warning (13012): Latch HEX3[5]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_fourth_sec[1]
+Warning (13012): Latch HEX3[6]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal one_fourth_sec[1]
+Info (144001): Generated suppressed messages file C:/Progs/Quartus_project/lab5_qs/output_files/stopwatch_l5.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]"
+Info (21057): Implemented 179 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 46 output pins
+    Info (21061): Implemented 130 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 75 warnings
+    Info: Peak virtual memory: 4599 megabytes
+    Info: Processing ended: Thu Jun 02 17:45:48 2022
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Progs/Quartus_project/lab5_qs/output_files/stopwatch_l5.map.smsg.
+
+

@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at stopwatch_l5.v(31): always construct contains both blocking and non-blocking assignments

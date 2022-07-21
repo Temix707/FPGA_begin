@@ -1,0 +1,399 @@
+Simulator report for lr4
+Tue Apr 12 17:23:52 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 137 nodes    ;
+; Simulation Coverage         ;      19.85 % ;
+; Total Number of Transitions ; 344          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                             ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                           ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                        ; Timing        ;
+; Start time                                                                                 ; 0 ns                                              ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                               ;               ;
+; Vector input source                                                                        ; C:/Users/8200402/Desktop/lr4/output_files/lr4.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                ; On            ;
+; Check outputs                                                                              ; Off                                               ; Off           ;
+; Report simulation coverage                                                                 ; On                                                ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                               ; Off           ;
+; Detect glitches                                                                            ; Off                                               ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                               ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                               ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                               ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                               ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                        ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                               ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                               ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                              ; Auto          ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      19.85 % ;
+; Total nodes checked                                 ; 137          ;
+; Total output ports checked                          ; 136          ;
+; Total output ports with complete 1/0-value coverage ; 27           ;
+; Total output ports with no 1/0-value coverage       ; 100          ;
+; Total output ports with no 1-value coverage         ; 100          ;
+; Total output ports with no 0-value coverage         ; 109          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------+
+; Complete 1/0-Value Coverage                            ;
++------------------+------------------+------------------+
+; Node Name        ; Output Port Name ; Output Port Type ;
++------------------+------------------+------------------+
+; |lr4|always0~0   ; |lr4|always0~0   ; out0             ;
+; |lr4|EN          ; |lr4|EN          ; regout           ;
+; |lr4|S~8         ; |lr4|S~8         ; out              ;
+; |lr4|S~9         ; |lr4|S~9         ; out              ;
+; |lr4|K[0]        ; |lr4|K[0]        ; regout           ;
+; |lr4|K[1]        ; |lr4|K[1]        ; regout           ;
+; |lr4|S~15        ; |lr4|S~15        ; out              ;
+; |lr4|S~16        ; |lr4|S~16        ; out              ;
+; |lr4|S~17        ; |lr4|S~17        ; out              ;
+; |lr4|S~18        ; |lr4|S~18        ; out              ;
+; |lr4|S~19        ; |lr4|S~19        ; out              ;
+; |lr4|S[0]        ; |lr4|S[0]        ; regout           ;
+; |lr4|S[1]        ; |lr4|S[1]        ; regout           ;
+; |lr4|CLOCK_50    ; |lr4|CLOCK_50    ; out              ;
+; |lr4|SW[0]       ; |lr4|SW[0]       ; out              ;
+; |lr4|KEY[0]      ; |lr4|KEY[0]      ; out              ;
+; |lr4|LEDR[0]     ; |lr4|LEDR[0]     ; pin_out          ;
+; |lr4|LEDR[1]     ; |lr4|LEDR[1]     ; pin_out          ;
+; |lr4|LessThan0~0 ; |lr4|LessThan0~0 ; out0             ;
+; |lr4|LessThan0~1 ; |lr4|LessThan0~1 ; out0             ;
+; |lr4|Add3~0      ; |lr4|Add3~0      ; out0             ;
+; |lr4|Add4~0      ; |lr4|Add4~0      ; out0             ;
+; |lr4|Add4~1      ; |lr4|Add4~1      ; out0             ;
+; |lr4|Add4~2      ; |lr4|Add4~2      ; out0             ;
+; |lr4|Add5~0      ; |lr4|Add5~0      ; out0             ;
+; |lr4|Add5~1      ; |lr4|Add5~1      ; out0             ;
+; |lr4|Add5~2      ; |lr4|Add5~2      ; out0             ;
++------------------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------+
+; Missing 1-Value Coverage                               ;
++------------------+------------------+------------------+
+; Node Name        ; Output Port Name ; Output Port Type ;
++------------------+------------------+------------------+
+; |lr4|COUNTER[1]  ; |lr4|COUNTER[1]  ; regout           ;
+; |lr4|always1~0   ; |lr4|always1~0   ; out0             ;
+; |lr4|S~0         ; |lr4|S~0         ; out              ;
+; |lr4|S~1         ; |lr4|S~1         ; out              ;
+; |lr4|S~2         ; |lr4|S~2         ; out              ;
+; |lr4|S~3         ; |lr4|S~3         ; out              ;
+; |lr4|S~4         ; |lr4|S~4         ; out              ;
+; |lr4|S~5         ; |lr4|S~5         ; out              ;
+; |lr4|COUNTER~0   ; |lr4|COUNTER~0   ; out              ;
+; |lr4|COUNTER~1   ; |lr4|COUNTER~1   ; out              ;
+; |lr4|COUNTER~2   ; |lr4|COUNTER~2   ; out              ;
+; |lr4|COUNTER~3   ; |lr4|COUNTER~3   ; out              ;
+; |lr4|COUNTER~4   ; |lr4|COUNTER~4   ; out              ;
+; |lr4|COUNTER~5   ; |lr4|COUNTER~5   ; out              ;
+; |lr4|COUNTER~6   ; |lr4|COUNTER~6   ; out              ;
+; |lr4|SBR         ; |lr4|SBR         ; regout           ;
+; |lr4|SBROS[0]    ; |lr4|SBROS[0]    ; regout           ;
+; |lr4|SBROS[1]    ; |lr4|SBROS[1]    ; regout           ;
+; |lr4|COUNTER~7   ; |lr4|COUNTER~7   ; out              ;
+; |lr4|COUNTER~8   ; |lr4|COUNTER~8   ; out              ;
+; |lr4|COUNTER~9   ; |lr4|COUNTER~9   ; out              ;
+; |lr4|COUNTER~10  ; |lr4|COUNTER~10  ; out              ;
+; |lr4|COUNTER~11  ; |lr4|COUNTER~11  ; out              ;
+; |lr4|COUNTER~12  ; |lr4|COUNTER~12  ; out              ;
+; |lr4|COUNTER~13  ; |lr4|COUNTER~13  ; out              ;
+; |lr4|S~10        ; |lr4|S~10        ; out              ;
+; |lr4|S~11        ; |lr4|S~11        ; out              ;
+; |lr4|S~12        ; |lr4|S~12        ; out              ;
+; |lr4|S~13        ; |lr4|S~13        ; out              ;
+; |lr4|S~14        ; |lr4|S~14        ; out              ;
+; |lr4|COUNTER~14  ; |lr4|COUNTER~14  ; out              ;
+; |lr4|COUNTER~15  ; |lr4|COUNTER~15  ; out              ;
+; |lr4|COUNTER~16  ; |lr4|COUNTER~16  ; out              ;
+; |lr4|COUNTER~17  ; |lr4|COUNTER~17  ; out              ;
+; |lr4|COUNTER~18  ; |lr4|COUNTER~18  ; out              ;
+; |lr4|COUNTER~19  ; |lr4|COUNTER~19  ; out              ;
+; |lr4|COUNTER~20  ; |lr4|COUNTER~20  ; out              ;
+; |lr4|COUNTER[0]  ; |lr4|COUNTER[0]  ; regout           ;
+; |lr4|COUNTER[2]  ; |lr4|COUNTER[2]  ; regout           ;
+; |lr4|COUNTER[3]  ; |lr4|COUNTER[3]  ; regout           ;
+; |lr4|COUNTER[4]  ; |lr4|COUNTER[4]  ; regout           ;
+; |lr4|COUNTER[5]  ; |lr4|COUNTER[5]  ; regout           ;
+; |lr4|COUNTER[6]  ; |lr4|COUNTER[6]  ; regout           ;
+; |lr4|S[4]        ; |lr4|S[4]        ; regout           ;
+; |lr4|S[5]        ; |lr4|S[5]        ; regout           ;
+; |lr4|S[6]        ; |lr4|S[6]        ; regout           ;
+; |lr4|S[7]        ; |lr4|S[7]        ; regout           ;
+; |lr4|S[8]        ; |lr4|S[8]        ; regout           ;
+; |lr4|S[9]        ; |lr4|S[9]        ; regout           ;
+; |lr4|KEY[1]      ; |lr4|KEY[1]      ; out              ;
+; |lr4|LEDR[4]     ; |lr4|LEDR[4]     ; pin_out          ;
+; |lr4|LEDR[5]     ; |lr4|LEDR[5]     ; pin_out          ;
+; |lr4|LEDR[6]     ; |lr4|LEDR[6]     ; pin_out          ;
+; |lr4|LEDR[7]     ; |lr4|LEDR[7]     ; pin_out          ;
+; |lr4|LEDR[8]     ; |lr4|LEDR[8]     ; pin_out          ;
+; |lr4|LEDR[9]     ; |lr4|LEDR[9]     ; pin_out          ;
+; |lr4|LEDG[0]     ; |lr4|LEDG[0]     ; pin_out          ;
+; |lr4|LEDG[1]     ; |lr4|LEDG[1]     ; pin_out          ;
+; |lr4|LEDG[2]     ; |lr4|LEDG[2]     ; pin_out          ;
+; |lr4|LEDG[3]     ; |lr4|LEDG[3]     ; pin_out          ;
+; |lr4|LEDG[4]     ; |lr4|LEDG[4]     ; pin_out          ;
+; |lr4|LEDG[5]     ; |lr4|LEDG[5]     ; pin_out          ;
+; |lr4|LEDG[6]     ; |lr4|LEDG[6]     ; pin_out          ;
+; |lr4|LessThan0~2 ; |lr4|LessThan0~2 ; out0             ;
+; |lr4|LessThan0~3 ; |lr4|LessThan0~3 ; out0             ;
+; |lr4|LessThan0~4 ; |lr4|LessThan0~4 ; out0             ;
+; |lr4|Add0~0      ; |lr4|Add0~0      ; out0             ;
+; |lr4|Add0~1      ; |lr4|Add0~1      ; out0             ;
+; |lr4|Add1~0      ; |lr4|Add1~0      ; out0             ;
+; |lr4|Add1~1      ; |lr4|Add1~1      ; out0             ;
+; |lr4|Add1~2      ; |lr4|Add1~2      ; out0             ;
+; |lr4|Add1~3      ; |lr4|Add1~3      ; out0             ;
+; |lr4|Add2~1      ; |lr4|Add2~1      ; out0             ;
+; |lr4|Add2~2      ; |lr4|Add2~2      ; out0             ;
+; |lr4|Add2~3      ; |lr4|Add2~3      ; out0             ;
+; |lr4|Add2~4      ; |lr4|Add2~4      ; out0             ;
+; |lr4|Add2~5      ; |lr4|Add2~5      ; out0             ;
+; |lr4|Add3~3      ; |lr4|Add3~3      ; out0             ;
+; |lr4|Add3~4      ; |lr4|Add3~4      ; out0             ;
+; |lr4|Add3~5      ; |lr4|Add3~5      ; out0             ;
+; |lr4|Add3~6      ; |lr4|Add3~6      ; out0             ;
+; |lr4|Add4~3      ; |lr4|Add4~3      ; out0             ;
+; |lr4|Add4~4      ; |lr4|Add4~4      ; out0             ;
+; |lr4|Add4~5      ; |lr4|Add4~5      ; out0             ;
+; |lr4|Add4~6      ; |lr4|Add4~6      ; out0             ;
+; |lr4|Add5~3      ; |lr4|Add5~3      ; out0             ;
+; |lr4|Add5~4      ; |lr4|Add5~4      ; out0             ;
+; |lr4|Add5~5      ; |lr4|Add5~5      ; out0             ;
+; |lr4|Add5~6      ; |lr4|Add5~6      ; out0             ;
+; |lr4|Add6~0      ; |lr4|Add6~0      ; out0             ;
+; |lr4|Add6~1      ; |lr4|Add6~1      ; out0             ;
+; |lr4|Add6~2      ; |lr4|Add6~2      ; out0             ;
+; |lr4|Add6~3      ; |lr4|Add6~3      ; out0             ;
+; |lr4|Add6~4      ; |lr4|Add6~4      ; out0             ;
+; |lr4|Add6~5      ; |lr4|Add6~5      ; out0             ;
+; |lr4|Add6~6      ; |lr4|Add6~6      ; out0             ;
+; |lr4|Add6~7      ; |lr4|Add6~7      ; out0             ;
+; |lr4|Add6~8      ; |lr4|Add6~8      ; out0             ;
+; |lr4|Add6~9      ; |lr4|Add6~9      ; out0             ;
+; |lr4|Add6~10     ; |lr4|Add6~10     ; out0             ;
++------------------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------+
+; Missing 0-Value Coverage                               ;
++------------------+------------------+------------------+
+; Node Name        ; Output Port Name ; Output Port Type ;
++------------------+------------------+------------------+
+; |lr4|COUNTER[1]  ; |lr4|COUNTER[1]  ; regout           ;
+; |lr4|always1~0   ; |lr4|always1~0   ; out0             ;
+; |lr4|S~0         ; |lr4|S~0         ; out              ;
+; |lr4|S~1         ; |lr4|S~1         ; out              ;
+; |lr4|S~2         ; |lr4|S~2         ; out              ;
+; |lr4|S~3         ; |lr4|S~3         ; out              ;
+; |lr4|S~4         ; |lr4|S~4         ; out              ;
+; |lr4|S~5         ; |lr4|S~5         ; out              ;
+; |lr4|S~6         ; |lr4|S~6         ; out              ;
+; |lr4|S~7         ; |lr4|S~7         ; out              ;
+; |lr4|COUNTER~0   ; |lr4|COUNTER~0   ; out              ;
+; |lr4|COUNTER~1   ; |lr4|COUNTER~1   ; out              ;
+; |lr4|COUNTER~2   ; |lr4|COUNTER~2   ; out              ;
+; |lr4|COUNTER~3   ; |lr4|COUNTER~3   ; out              ;
+; |lr4|COUNTER~4   ; |lr4|COUNTER~4   ; out              ;
+; |lr4|COUNTER~5   ; |lr4|COUNTER~5   ; out              ;
+; |lr4|COUNTER~6   ; |lr4|COUNTER~6   ; out              ;
+; |lr4|SBR         ; |lr4|SBR         ; regout           ;
+; |lr4|SBROS[0]    ; |lr4|SBROS[0]    ; regout           ;
+; |lr4|SBROS[1]    ; |lr4|SBROS[1]    ; regout           ;
+; |lr4|COUNTER~7   ; |lr4|COUNTER~7   ; out              ;
+; |lr4|COUNTER~8   ; |lr4|COUNTER~8   ; out              ;
+; |lr4|COUNTER~9   ; |lr4|COUNTER~9   ; out              ;
+; |lr4|COUNTER~10  ; |lr4|COUNTER~10  ; out              ;
+; |lr4|COUNTER~11  ; |lr4|COUNTER~11  ; out              ;
+; |lr4|COUNTER~12  ; |lr4|COUNTER~12  ; out              ;
+; |lr4|COUNTER~13  ; |lr4|COUNTER~13  ; out              ;
+; |lr4|S~10        ; |lr4|S~10        ; out              ;
+; |lr4|S~11        ; |lr4|S~11        ; out              ;
+; |lr4|S~12        ; |lr4|S~12        ; out              ;
+; |lr4|S~13        ; |lr4|S~13        ; out              ;
+; |lr4|S~14        ; |lr4|S~14        ; out              ;
+; |lr4|COUNTER~14  ; |lr4|COUNTER~14  ; out              ;
+; |lr4|COUNTER~15  ; |lr4|COUNTER~15  ; out              ;
+; |lr4|COUNTER~16  ; |lr4|COUNTER~16  ; out              ;
+; |lr4|COUNTER~17  ; |lr4|COUNTER~17  ; out              ;
+; |lr4|COUNTER~18  ; |lr4|COUNTER~18  ; out              ;
+; |lr4|COUNTER~19  ; |lr4|COUNTER~19  ; out              ;
+; |lr4|COUNTER~20  ; |lr4|COUNTER~20  ; out              ;
+; |lr4|COUNTER[0]  ; |lr4|COUNTER[0]  ; regout           ;
+; |lr4|COUNTER[2]  ; |lr4|COUNTER[2]  ; regout           ;
+; |lr4|COUNTER[3]  ; |lr4|COUNTER[3]  ; regout           ;
+; |lr4|COUNTER[4]  ; |lr4|COUNTER[4]  ; regout           ;
+; |lr4|COUNTER[5]  ; |lr4|COUNTER[5]  ; regout           ;
+; |lr4|COUNTER[6]  ; |lr4|COUNTER[6]  ; regout           ;
+; |lr4|S[2]        ; |lr4|S[2]        ; regout           ;
+; |lr4|S[3]        ; |lr4|S[3]        ; regout           ;
+; |lr4|S[4]        ; |lr4|S[4]        ; regout           ;
+; |lr4|S[5]        ; |lr4|S[5]        ; regout           ;
+; |lr4|S[6]        ; |lr4|S[6]        ; regout           ;
+; |lr4|S[7]        ; |lr4|S[7]        ; regout           ;
+; |lr4|S[8]        ; |lr4|S[8]        ; regout           ;
+; |lr4|S[9]        ; |lr4|S[9]        ; regout           ;
+; |lr4|KEY[1]      ; |lr4|KEY[1]      ; out              ;
+; |lr4|LEDR[2]     ; |lr4|LEDR[2]     ; pin_out          ;
+; |lr4|LEDR[3]     ; |lr4|LEDR[3]     ; pin_out          ;
+; |lr4|LEDR[4]     ; |lr4|LEDR[4]     ; pin_out          ;
+; |lr4|LEDR[5]     ; |lr4|LEDR[5]     ; pin_out          ;
+; |lr4|LEDR[6]     ; |lr4|LEDR[6]     ; pin_out          ;
+; |lr4|LEDR[7]     ; |lr4|LEDR[7]     ; pin_out          ;
+; |lr4|LEDR[8]     ; |lr4|LEDR[8]     ; pin_out          ;
+; |lr4|LEDR[9]     ; |lr4|LEDR[9]     ; pin_out          ;
+; |lr4|LEDG[0]     ; |lr4|LEDG[0]     ; pin_out          ;
+; |lr4|LEDG[1]     ; |lr4|LEDG[1]     ; pin_out          ;
+; |lr4|LEDG[2]     ; |lr4|LEDG[2]     ; pin_out          ;
+; |lr4|LEDG[3]     ; |lr4|LEDG[3]     ; pin_out          ;
+; |lr4|LEDG[4]     ; |lr4|LEDG[4]     ; pin_out          ;
+; |lr4|LEDG[5]     ; |lr4|LEDG[5]     ; pin_out          ;
+; |lr4|LEDG[6]     ; |lr4|LEDG[6]     ; pin_out          ;
+; |lr4|LessThan0~2 ; |lr4|LessThan0~2 ; out0             ;
+; |lr4|LessThan0~3 ; |lr4|LessThan0~3 ; out0             ;
+; |lr4|LessThan0~4 ; |lr4|LessThan0~4 ; out0             ;
+; |lr4|Add0~0      ; |lr4|Add0~0      ; out0             ;
+; |lr4|Add0~1      ; |lr4|Add0~1      ; out0             ;
+; |lr4|Add1~0      ; |lr4|Add1~0      ; out0             ;
+; |lr4|Add1~1      ; |lr4|Add1~1      ; out0             ;
+; |lr4|Add1~2      ; |lr4|Add1~2      ; out0             ;
+; |lr4|Add1~3      ; |lr4|Add1~3      ; out0             ;
+; |lr4|Add2~0      ; |lr4|Add2~0      ; out0             ;
+; |lr4|Add2~1      ; |lr4|Add2~1      ; out0             ;
+; |lr4|Add2~2      ; |lr4|Add2~2      ; out0             ;
+; |lr4|Add2~3      ; |lr4|Add2~3      ; out0             ;
+; |lr4|Add2~4      ; |lr4|Add2~4      ; out0             ;
+; |lr4|Add2~5      ; |lr4|Add2~5      ; out0             ;
+; |lr4|Add3~1      ; |lr4|Add3~1      ; out0             ;
+; |lr4|Add3~2      ; |lr4|Add3~2      ; out0             ;
+; |lr4|Add3~3      ; |lr4|Add3~3      ; out0             ;
+; |lr4|Add3~4      ; |lr4|Add3~4      ; out0             ;
+; |lr4|Add3~5      ; |lr4|Add3~5      ; out0             ;
+; |lr4|Add3~6      ; |lr4|Add3~6      ; out0             ;
+; |lr4|Add4~3      ; |lr4|Add4~3      ; out0             ;
+; |lr4|Add4~4      ; |lr4|Add4~4      ; out0             ;
+; |lr4|Add4~5      ; |lr4|Add4~5      ; out0             ;
+; |lr4|Add4~6      ; |lr4|Add4~6      ; out0             ;
+; |lr4|Add5~3      ; |lr4|Add5~3      ; out0             ;
+; |lr4|Add5~4      ; |lr4|Add5~4      ; out0             ;
+; |lr4|Add5~5      ; |lr4|Add5~5      ; out0             ;
+; |lr4|Add5~6      ; |lr4|Add5~6      ; out0             ;
+; |lr4|Add6~0      ; |lr4|Add6~0      ; out0             ;
+; |lr4|Add6~1      ; |lr4|Add6~1      ; out0             ;
+; |lr4|Add6~2      ; |lr4|Add6~2      ; out0             ;
+; |lr4|Add6~3      ; |lr4|Add6~3      ; out0             ;
+; |lr4|Add6~4      ; |lr4|Add6~4      ; out0             ;
+; |lr4|Add6~5      ; |lr4|Add6~5      ; out0             ;
+; |lr4|Add6~6      ; |lr4|Add6~6      ; out0             ;
+; |lr4|Add6~7      ; |lr4|Add6~7      ; out0             ;
+; |lr4|Add6~8      ; |lr4|Add6~8      ; out0             ;
+; |lr4|Add6~9      ; |lr4|Add6~9      ; out0             ;
+; |lr4|Add6~10     ; |lr4|Add6~10     ; out0             ;
++------------------+------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Apr 12 17:23:52 2022
+Info: Command: quartus_sim --simulation_results_format=VWF lr4 -c lr4
+Info (324025): Using vector source file "C:/Users/8200402/Desktop/lr4/output_files/lr4.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning (324036): Found clock-sensitive change during active clock edge at time 20.0 ns on register "|lr4|K[0]"
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      19.85 %
+Info (328052): Number of transitions in simulation is 344
+Info (324045): Vector file lr4.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 314 megabytes
+    Info: Processing ended: Tue Apr 12 17:23:52 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
